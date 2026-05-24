@@ -90,7 +90,7 @@ function App() {
   useEffect(() => {
 
     axios
-      .get("http://127.0.0.1:8000/api/reviews/")
+      .get("https://backend-7a2m.onrender.com/api/reviews/")
       .then((response) => {
 
         const formattedReviews = response.data.map(
@@ -138,7 +138,7 @@ function App() {
 
       setLoading(true);
       await axios.post(
-        "http://127.0.0.1:8000/api/subscribe/",
+        "https://backend-7a2m.onrender.com/api/subscribe/",
         {
           email: email,
         }
@@ -1591,7 +1591,7 @@ function App() {
                   try {
                     setReviewLoading(true);
                     await axios.post(
-                      "http://127.0.0.1:8000/api/reviews/add/",
+                      "https://backend-7a2m.onrender.com/api/reviews/add/",
                       {
                         name: reviewName,
                         review: reviewText,
