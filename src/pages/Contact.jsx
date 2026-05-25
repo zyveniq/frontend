@@ -1,7 +1,7 @@
 import React from "react";
 import ScrollToTop from "../ScrollToTop";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -144,6 +144,15 @@ export default function Contact() {
                   className="w-14 h-14 rounded-full bg-[#f4f7fb] flex items-center justify-center hover:bg-[#023047] hover:text-white transition-all duration-300"
                 >
                   <FaLinkedinIn size={20} />
+                </a>
+
+                <a
+                  href="https://wa.me/9365005324"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-14 h-14 rounded-full bg-[#f4f7fb] flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300"
+                >
+                  <FaWhatsapp size={22} />
                 </a>
 
               </div>

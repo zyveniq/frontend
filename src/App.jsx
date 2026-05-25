@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import {
   FaInstagram,
   FaLinkedinIn,
+  FaWhatsapp,
   FaArrowRight,
 } from "react-icons/fa";
 
@@ -56,6 +57,114 @@ function App() {
   const [reviewLoading, setReviewLoading] = useState(false);
   const [openInfo, setOpenInfo] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+
+     useEffect(() => {
+
+  // Disable right click
+  const disableRightClick = (e) => {
+    e.preventDefault();
+  };
+
+  // Disable copy
+  const disableCopy = (e) => {
+    e.preventDefault();
+  };
+
+  // Disable cut
+  const disableCut = (e) => {
+    e.preventDefault();
+  };
+
+  // Disable paste
+  const disablePaste = (e) => {
+    e.preventDefault();
+  };
+
+  // Disable keyboard shortcuts
+  const disableKeys = (e) => {
+
+    // Ctrl+C
+    if (e.ctrlKey && e.key === "c") {
+      e.preventDefault();
+    }
+
+    // Ctrl+V
+    if (e.ctrlKey && e.key === "v") {
+      e.preventDefault();
+    }
+
+    // Ctrl+X
+    if (e.ctrlKey && e.key === "x") {
+      e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.key === "u") {
+      e.preventDefault();
+    }
+
+    // F12
+    if (e.key === "F12") {
+      e.preventDefault();
+    }
+
+  };
+
+  document.addEventListener(
+    "contextmenu",
+    disableRightClick
+  );
+
+  document.addEventListener(
+    "copy",
+    disableCopy
+  );
+
+  document.addEventListener(
+    "cut",
+    disableCut
+  );
+
+  document.addEventListener(
+    "paste",
+    disablePaste
+  );
+
+  document.addEventListener(
+    "keydown",
+    disableKeys
+  );
+
+  return () => {
+
+    document.removeEventListener(
+      "contextmenu",
+      disableRightClick
+    );
+
+    document.removeEventListener(
+      "copy",
+      disableCopy
+    );
+
+    document.removeEventListener(
+      "cut",
+      disableCut
+    );
+
+    document.removeEventListener(
+      "paste",
+      disablePaste
+    );
+
+    document.removeEventListener(
+      "keydown",
+      disableKeys
+    );
+
+  };
+
+}, []);
 
   const defaultTestimonials = [
     {
@@ -1496,6 +1605,15 @@ function App() {
                   <FaLinkedinIn size={20} />
                 </a>
 
+                <a
+                  href="https://wa.me/9365005324"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-14 h-14 rounded-full bg-[#f4f7fb] flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300"
+                >
+                  <FaWhatsapp size={22} />
+                </a>
+                
               </div>
 
             </div>
