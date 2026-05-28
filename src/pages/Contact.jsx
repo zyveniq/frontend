@@ -89,7 +89,7 @@ export default function Contact() {
           {/* RIGHT SIDE */}
           <div>
 
-            <p className="uppercase tracking-[0.35em] text-[#caa25d] text-xs">
+            <p className="uppercase tracking-[0.55em] text-[#D4AF37] text-md font-bold">
               Zyveniq
             </p>
 
