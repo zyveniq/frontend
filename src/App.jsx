@@ -335,25 +335,29 @@ function App() {
 
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1 md:gap-4">
 
-            {/* GOLD CIRCLE */}
+            {/* LOGO */}
 
-            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-[#FFB703]/40 bg-[#FFF8E1] flex items-center justify-center shadow-[0_0_45px_rgba(255,183,3,0.22)]">
+            <img
+            src={logo}
+            alt="Zyveniq Logo"
+            className="h-10 md:h-16 w-auto object-contain"
+            />
 
-              <img
-                src={logo}
-                alt="Zyveniq Logo"
-                className="w-10 md:w-16 object-contain scale-[1.7] md:scale-[2.00]"
-              />
+            {/* BRAND TEXT */}
+
+            <div className="flex flex-col leading-none">
+
+              <h1 className="text-[#023047] font-black tracking-[0.18em] text-lg md:text-4xl">
+                ZYVENIQ
+              </h1>
+
+              <p className="text-[#D4A017] text-[7px] md:text-[12px] tracking-[0.35em] mt-1 uppercase font-semibold">
+                WEAR THE MOMENT
+              </p>
 
             </div>
 
-            {/* BRAND NAME */}
-
-            <h1 className="text-[#023047] font-black text-lg md:text-3xl tracking-[0.12em] md:tracking-[0.18em]">
-              ZYVENIQ
-            </h1>
-
-          </div>
+      </div>
 
           {/* RIGHT */}
 
@@ -904,7 +908,10 @@ function App() {
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
-                className="relative rounded-[35px] overflow-hidden group cursor-pointer shadow-[0_20px_80px_rgba(0,0,0,0.18)]"
+                className="relative rounded-[35px] overflow-hidden group cursor-pointer
+                shadow-[12px_14px_35px_rgba(0,0,0,0.679)]
+                hover:shadow-[18px_20px_60px_rgba(0,0,0,0.35)]
+                transition-all duration-300"
               >
 
                 {/* IMAGE */}
@@ -1015,7 +1022,10 @@ function App() {
                     transition={{
                       duration: 0.35,
                     }}
-                    className="relative group overflow-hidden rounded-[34px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] bg-white"
+                    className="relative group overflow-hidden rounded-[34px] bg-white
+                    shadow-[14px_14px_35px_rgba(0,0,0,0.48)] 
+                    hover:shadow-[20px_20px_45px_rgba(0,0,0,0.24)]
+                    transition-all duration-500"
                   >
 
                     <img

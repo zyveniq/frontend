@@ -1,13 +1,14 @@
 import React from "react";
 import ScrollToTop from "../ScrollToTop";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaWhatsapp, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   return (
     <div className="bg-[#f7f8fa] min-h-screen text-[#023047]">
 
       <ScrollToTop />
+
 
       {/* HERO SECTION */}
 
