@@ -1,196 +1,162 @@
 import React from "react";
 import ScrollToTop from "../ScrollToTop";
-import { Link } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div className="bg-[#f7f8fa] min-h-screen text-[#023047]">
+    <div className="bg-white min-h-screen text-[#023047]">
 
       <ScrollToTop />
 
-
       {/* HERO SECTION */}
+      <section className="relative h-[450px] overflow-hidden">
 
-      <section className="bg-[#02263D] text-white pt-40 pb-28 px-6">
+        <img
+          src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop"
+          alt="fashion"
+          className="w-full h-full object-cover"
+        />
 
-        <div className="max-w-6xl mx-auto">
+        <div className="absolute inset-0 bg-black/60"></div>
 
-          <p className="uppercase tracking-[0.35em] text-[#FFB703] text-sm font-semibold">
-            Contact Zyveniq
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+
+          <p className="uppercase tracking-[0.35em] text-gray-300 text-xs">
+            Get In Touch
           </p>
 
-          <h1 className="mt-8 text-5xl md:text-7xl font-black leading-[1.05] max-w-4xl">
-
-            Let’s Build
-            <span className="text-[#FFB703]"> Something </span>
-            Meaningful.
-
+          <h1 className="mt-5 text-5xl md:text-7xl text-white font-serif">
+            Contact Us
           </h1>
 
-          <p className="mt-8 text-gray-300 text-lg leading-9 max-w-3xl">
-
-            Whether you are a creator, early supporter, collaborator,
-            investor, or someone who simply connects with the Zyveniq vision —
-            we would love to hear from you.
-
+          <p className="mt-6 text-gray-200 max-w-2xl leading-8">
+            We'd love to hear from you. Whether it's a question,
+            feedback, collaboration, or support — we're here for you.
           </p>
 
         </div>
 
       </section>
 
-      {/* CONTACT CARD */}
+      {/* CONTACT SECTION */}
+      <section className="py-24 px-6">
 
-      <section className="px-6 -mt-16 pb-28">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
 
-        <div className="max-w-5xl mx-auto bg-white rounded-[40px] shadow-[0_20px_80px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-100">
+          {/* LEFT SIDE */}
+          <div>
 
-          <div className="grid md:grid-cols-2">
+            <h2 className="text-4xl md:text-5xl font-serif text-[#2d2d2d]">
+              Send Us a Message
+            </h2>
 
-            {/* LEFT */}
+            <p className="mt-5 text-gray-500 leading-8">
+              Fill out the form below and we'll get back to you soon.
+            </p>
 
-            <div className="bg-gradient-to-br from-[#023047] to-[#011826] p-12 text-white">
+            {/* FORM (SAFE STATIC) */}
+            <form className="mt-12 space-y-8">
 
-              <p className="uppercase tracking-[0.35em] text-[#FFB703] text-xs font-semibold">
-                Reach Us
-              </p>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-[#023047]"
+              />
 
-              <h2 className="mt-6 text-4xl font-black leading-tight">
-                Contact Information
-              </h2>
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-[#023047]"
+              />
 
-              <p className="mt-6 text-gray-300 leading-8">
+              <textarea
+                rows={6}
+                placeholder="Write your message..."
+                className="w-full border border-gray-300 px-5 py-4 outline-none resize-none focus:border-[#023047]"
+              />
 
-                Zyveniq is currently in its early growth phase.
-                For all enquiries, collaborations, partnerships,
-                and support related questions, connect with us directly.
+              <button
+                type="button"
+                className="bg-[#023047] text-white px-10 py-4 uppercase tracking-[0.2em] hover:bg-black transition"
+              >
+                Send Message
+              </button>
 
-              </p>
+            </form>
 
-              <div className="mt-12 space-y-8">
+          </div>
 
-                <div>
-                  <p className="text-[#FFB703] text-sm uppercase tracking-[0.25em]">
-                    Email
-                  </p>
+          {/* RIGHT SIDE */}
+          <div>
 
-                  <a
-                    href="mailto:support@zyveniq.com"
-                    className="mt-2 block text-2xl font-bold hover:text-[#FFB703] transition"
-                  >
-                    support@zyveniq.com
-                  </a>
-                </div>
+            <p className="uppercase tracking-[0.35em] text-[#caa25d] text-xs">
+              Zyveniq
+            </p>
 
-                <div>
-                  <p className="text-[#FFB703] text-sm uppercase tracking-[0.25em]">
-                    Location
-                  </p>
+            <h3 className="mt-5 text-5xl font-bold leading-tight text-[#023047]">
+              Fashion.
+              <br />
+              Culture.
+              <br />
+              Technology.
+            </h3>
 
-                  <p className="mt-2 text-xl font-semibold">
-                    Assam, India
-                  </p>
-                </div>
+            <p className="mt-8 text-gray-600 leading-8">
+              We are building a premium fashion-tech ecosystem
+              focused on intelligent commerce, creator culture,
+              and immersive digital experiences.
+            </p>
 
+            {/* INFO */}
+            <div className="mt-12 space-y-8">
+
+              <div>
+                <p className="uppercase tracking-[0.3em] text-[#caa25d] text-xs mb-3">
+                  Email
+                </p>
+                <a href="mailto:support@zyveniq.com" className="text-xl font-semibold">
+                  support@zyveniq.com
+                </a>
+              </div>
+
+              <div>
+                <p className="uppercase tracking-[0.3em] text-[#caa25d] text-xs mb-3">
+                  Location
+                </p>
+                <p className="text-lg text-gray-700">
+                  Assam, India
+                </p>
               </div>
 
             </div>
 
-            {/* RIGHT */}
+            {/* SOCIALS */}
+            <div className="mt-14 flex gap-5">
 
-            <div className="p-12 flex flex-col justify-between">
+              <a
+                href="https://instagram.com"
+                className="w-14 h-14 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#023047] hover:text-white transition"
+              >
+                <FaInstagram size={20} />
+              </a>
 
-              <div>
+              <a
+                href="https://linkedin.com"
+                className="w-14 h-14 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#023047] hover:text-white transition"
+              >
+                <FaLinkedinIn size={20} />
+              </a>
 
-                <p className="uppercase tracking-[0.35em] text-[#219EBC] text-xs font-semibold">
-                  Zyveniq
-                </p>
-
-                <h3 className="mt-5 text-4xl font-black leading-tight">
-                  Fashion.
-                  <br />
-                  Culture.
-                  <br />
-                  Technology.
-                </h3>
-
-                <p className="mt-8 text-gray-600 leading-8">
-
-                  We are building a premium fashion-tech ecosystem
-                  focused on intelligent commerce, modern identity,
-                  creator culture, and immersive digital experiences.
-
-                </p>
-
-              </div>
-
-              {/* SOCIALS */}
-
-              <div className="mt-12 flex items-center gap-5">
-
-                <a
-                  href="https://www.instagram.com/zyveniq__/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-full bg-[#f4f7fb] flex items-center justify-center hover:bg-[#023047] hover:text-white transition-all duration-300"
-                >
-                  <FaInstagram size={22} />
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/company/zyveniq/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-full bg-[#f4f7fb] flex items-center justify-center hover:bg-[#023047] hover:text-white transition-all duration-300"
-                >
-                  <FaLinkedinIn size={20} />
-                </a>
-
-                <a
-                  href="https://wa.me/9365005324"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-full bg-[#f4f7fb] flex items-center justify-center hover:bg-[#023047] hover:text-white transition-all duration-300"
-                >
-                  <FaWhatsapp size={22} />
-                </a>
-
-                
-
-              </div>
+              <a
+                href="https://wa.me/9365005324"
+                className="w-14 h-14 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#023047] hover:text-white transition"
+              >
+                <FaWhatsapp size={20} />
+              </a>
 
             </div>
 
           </div>
-
-        </div>
-
-      </section>
-
-      {/* BOTTOM CTA */}
-
-      <section className="pb-28 px-6">
-
-        <div className="max-w-5xl mx-auto text-center">
-
-          <p className="uppercase tracking-[0.35em] text-[#FFB703] text-xs font-semibold">
-            Zyveniq
-          </p>
-
-          <h2 className="mt-6 text-5xl md:text-7xl font-black text-[#023047] leading-[1.05]">
-
-            The Future Of Fashion
-            <span className="text-[#FFB703]"> Starts Here.</span>
-
-          </h2>
-
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center mt-10 px-10 py-5 rounded-full bg-[#023047] text-white font-bold hover:bg-[#011826] transition-all duration-300"
-          >
-            Back To Home
-          </Link>
 
         </div>
 
