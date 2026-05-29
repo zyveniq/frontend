@@ -15,6 +15,7 @@ import fashion1 from "./assets/fashion1.jpg";
 import fashion2 from "./assets/fashion2.jpg";
 import fashion3 from "./assets/fashion3.jpg";
 import heroVideo from "./assets/VID-20260522-WA0011.mp4";
+import FadeUp from "./pages/FadeUp";
 
 import ethnic1 from "./assets/1.jpg";
 import ethnic2 from "./assets/2.jpg";
@@ -709,8 +710,19 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 
 
       {/* ================= TESTIMONIALS ================= */}
+      <FadeUp>
+      {/* ================= TESTIMONIALS ================= */}
 
-      <section className="py-32 bg-gradient-to-b from-[#f7fbff] via-white to-[#f9fcff] relative overflow-hidden">
+<motion.section
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{
+    duration: 0.9,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="py-32 bg-gradient-to-b from-[#f7fbff] via-white to-[#f9fcff] relative overflow-hidden"
+>
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#8ECAE6]/10 blur-3xl rounded-full"></div>
         <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#FFB703]/10 blur-3xl rounded-full"></div>
 
@@ -772,9 +784,16 @@ mb-0
 
             {allTestimonials.map((review, index) => (
 
-              <motion.div
-                key={index}
-                whileHover={{ y: -8 }}
+<motion.div
+  key={index}
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 0.7,
+    delay: index * 0.12,
+  }}
+  whileHover={{ y: -8 }}
                 className={`rounded-[35px] p-9 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_30px_90px_rgba(0,0,0,0.12)] shadow-[0_25px_80px_rgba(0,0,0,0.08)] border ${
                   review.highlight
                     ? "bg-gradient-to-br from-[#023047] to-[#0B2942] text-white border-[#0B2942]"
@@ -856,9 +875,10 @@ mb-0
 
         </div>
 
-      </section>
+      </motion.section>
+      </FadeUp>
       {/* ================= COLLECTIONS ================= */}
-
+      <FadeUp>
       <section
         id="collections"
         className="py-20 bg-white"
@@ -970,8 +990,9 @@ mb-0
         </div>
 
       </section>
+      </FadeUp>
       {/* ================= SOUL OF ZYVENIQ ================= */}
-
+      <FadeUp>
       <section className="relative py-20 bg-gradient-to-b from-[#f8f5ef] to-white overflow-hidden">
 
         {/* BACKGROUND GLOW */}
@@ -1078,8 +1099,9 @@ mb-0
         </div>
 
       </section>
+      </FadeUp>
       {/* ================= BRAND STATS SECTION ================= */}
-
+      <FadeUp>
       <section className="py-26 bg-[#06192B] overflow-hidden">
 
         <div className="max-w-7xl mx-auto px-6">
@@ -1174,8 +1196,9 @@ mb-0
         </div>
 
       </section>
+      </FadeUp>
       {/* ================= ZYVENIQ ECOSYSTEM ================= */}
-
+      <FadeUp>
       <section className="py-26 bg-gradient-to-b from-white to-[#f7fbff] border-t border-black/5 overflow-hidden">
 
       <div className="w-full pl-4 md:pl-10 xl:pl-14"> 
@@ -1542,6 +1565,7 @@ mb-0
         </div>
 
       </section>
+      </FadeUp>
       </>
       }
     />
