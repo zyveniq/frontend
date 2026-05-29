@@ -32,7 +32,7 @@ export default function ComingSoon() {
 
         </h1>
 
-        <p className="mt-10 text-gray-300 text-lg leading-9 max-w-2xl mx-auto">
+        <p className="mt-10 text-white-300 text-lg leading-9 max-w-2xl mx-auto">
 
           This experience is currently under development
           as we continue building the future of fashion,

@@ -7,6 +7,7 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
   FaArrowRight,
+  FaFacebook,
 } from "react-icons/fa";
 
 import logo from "./assets/logo.png";
@@ -67,6 +68,7 @@ function App() {
 
   const [reviewName, setReviewName] = useState("");
   const [reviewText, setReviewText] = useState("");
+  const [reviewState, setReviewState] = useState("");
   const [reviewLoading, setReviewLoading] = useState(false);
   const [openInfo, setOpenInfo] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
@@ -224,14 +226,16 @@ function App() {
       .get("https://backend-7a2m.onrender.com/api/reviews/")
       .then((response) => {
 
-        const formattedReviews = response.data.map(
-          (item) => ({
-            name: item.name,
-            role: "Verified Community Member",
-            text: item.review,
-            highlight: false,
-          })
-        );
+const formattedReviews = response.data.map(
+  (item) => ({
+    name: item.name,
+    role: "Verified Community Member",
+    state: item.state,
+    text: item.review,
+    highlight: false,
+    image: riyaImg,
+  })
+);
 
         setReviews(formattedReviews);
 
@@ -404,24 +408,43 @@ function App() {
       {/* ================= SLIDE MENU ================= */}
 
       <motion.div
-        initial={{ x: -320 }}
-        animate={{
-          x: showMenu ? 0 : -320,
-        }}
+initial={{ x: -340 }}
+
+animate={{
+  x: showMenu ? 0 : -340,
+}}
         transition={{
           duration: 0.45,
           ease: "easeInOut",
         }}
-        className="fixed top-0 left-0 h-screen w-[300px] z-[9999] bg-white/90 backdrop-blur-2xl border-r border-gray-200 shadow-[0_20px_80px_rgba(0,0,0,0.12)] p-8"
+        className="
+fixed
+top-0
+left-0
+h-screen
+w-[340px]
+z-[9999]
+bg-white
+p-8
+border-r
+border-[#023047]/10
+shadow-[0_20px_80px_rgba(0,0,0,0.12)]
+"
       >
 
         {/* TOP */}
 
         <div className="flex items-center justify-between">
 
-          <h2 className="text-2xl font-black text-[#023047]">
-            Menu
-          </h2>
+<div>
+  <p className="text-[11px] uppercase tracking-[0.35em] text-[#FFB703] font-semibold">
+    Navigation
+  </p>
+
+  <h2 className="mt-2 text-[32px] font-semibold text-[#023047] tracking-[-0.03em]">
+    Menu
+  </h2>
+</div>
 
           <button
             onClick={() => setShowMenu(false)}
@@ -432,47 +455,70 @@ function App() {
 
         </div>
 
-        {/* LINKS */}
+        <div className="mt-16 flex flex-col pb-40">
 
-        <div className="mt-16 flex flex-col gap-8">
-        <Link
-          to="/"
-          onClick={() => setShowMenu(false)}
-          className="text-left text-2xl font-bold text-[#023047] hover:text-[#FFB703] transition-all duration-300"
-        >
-          Home
-        </Link>
-        <Link
-          to="/about"
-          onClick={() => setShowMenu(false)}
-          className="text-left text-2xl font-bold text-[#023047] hover:text-[#FFB703] transition-all duration-300"
-        >
-          About Us
-        </Link>
+  <Link
+    to="/"
+    onClick={() => setShowMenu(false)}
+    className="group flex items-center justify-between py-5 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+  >
+    Home
+    <span className="text-[#FFB703] opacity-70">→</span>
+  </Link>
 
-        <Link
-          to="/contact"
-          onClick={() => setShowMenu(false)}
-          className="text-left text-2xl font-bold text-[#023047] hover:text-[#FFB703] transition-all duration-300"
-        >
-          Contact Us
-        </Link>
+  <Link
+    to="/about"
+    onClick={() => setShowMenu(false)}
+    className="group flex items-center justify-between py-5 border-t border-[#023047]/8 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+  >
+    About Us
+    <span className="text-[#FFB703] opacity-70">→</span>
+  </Link>
 
-          <Link
-            to="/faqs"
-            onClick={() => setShowMenu(false)}
-            className="text-left text-2xl font-bold text-[#023047] hover:text-[#FFB703] transition-all duration-300"
-          >
-            FAQs
-          </Link>
+  <Link
+    to="/contact"
+    onClick={() => setShowMenu(false)}
+    className="group flex items-center justify-between py-5 border-t border-[#023047]/8 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+  >
+    Contact Us
+    <span className="text-[#FFB703] opacity-70">→</span>
+  </Link>
 
-        </div>
+  <Link
+    to="/faqs"
+    onClick={() => setShowMenu(false)}
+    className="group flex items-center justify-between py-5 border-t border-[#023047]/8 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+  >
+    FAQs
+    <span className="text-[#FFB703] opacity-70">→</span>
+  </Link>
+
+</div>
+        <div className="absolute bottom-8 left-8 right-8">
+
+<div className="border-t border-[#023047]/10 pt-6">
+
+  <h3 className="text-[#023047] text-lg font-bold tracking-wide">
+    <span className="text-[#FFB703]">ZYV</span>ENIQ
+  </h3>
+
+  <p className="mt-2 text-[#023047]/60 text-sm leading-6">
+    Fashion. Culture. Technology.
+  </p>
+
+  <p className="mt-4 text-[#023047]/45 text-sm">
+    Assam, India
+  </p>
+
+</div>
+
+</div>
 
       </motion.div>
       {showMenu && (
         <div
           onClick={() => setShowMenu(false)}
-          className="fixed inset-0 z-[9998] bg-black/30 backdrop-blur-sm"
+          className="fixed inset-0 z-[9998] bg-[#023047]/20 backdrop-blur-[3px] backdrop-blur-sm"
         />
       )}
 
@@ -672,7 +718,18 @@ function App() {
 
           <div className="text-center">
 
-            <p className="uppercase tracking-[0.3em] text-[#219EBC] text-sm font-semibold">
+            <p className="
+inline-flex
+items-center
+gap-2
+text-[#023047]
+text-[13px]
+md:text-[20px]
+font-black
+tracking-[0.22em]
+uppercase
+mb-0
+">
               Community Voices
             </p>
 
@@ -804,14 +861,25 @@ function App() {
 
       <section
         id="collections"
-        className="py-26 bg-white"
+        className="py-20 bg-white"
       >
 
         <div className="max-w-7xl mx-auto px-6">
 
           <div className="text-center">
 
-            <p className="uppercase tracking-[0.35em] text-[#219EBC] text-sm font-semibold">
+            <p className="
+inline-flex
+items-center
+gap-2
+text-[#023047]
+text-[13px]
+md:text-[20px]
+font-black
+tracking-[0.22em]
+uppercase
+mb-0
+">
               Curated Collections
             </p>
 
@@ -904,7 +972,7 @@ function App() {
       </section>
       {/* ================= SOUL OF ZYVENIQ ================= */}
 
-      <section className="relative py-32 bg-gradient-to-b from-[#f8f5ef] to-white overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-b from-[#f8f5ef] to-white overflow-hidden">
 
         {/* BACKGROUND GLOW */}
 
@@ -921,7 +989,18 @@ function App() {
 
           <div className="max-w-4xl mb-20">
 
-            <p className="uppercase tracking-[0.35em] text-[#219EBC] text-sm font-semibold">
+            <p className="
+inline-flex
+items-center
+gap-2
+text-[#023047]
+text-[13px]
+md:text-[20px]
+font-black
+tracking-[0.22em]
+uppercase
+mb-0
+">
               The Soul Of Zyveniq
             </p>
 
@@ -932,7 +1011,7 @@ function App() {
 
             </h2>
 
-            <p className="mt-8 text-black text-lg leading-9 max-w-3xl">
+            <p className="mt-8 text-black text-lg leading-7 max-w-3xl">
 
               Inspired by Indian craftsmanship, artisan culture, mythology,
               embroidery traditions, and contemporary fashion expression.
@@ -1105,7 +1184,18 @@ function App() {
 
           <div className="max-w-6xl">
 
-            <p className="uppercase tracking-[0.35em] text-[#219EBC] text-sm font-semibold">
+            <p className="
+inline-flex
+items-center
+gap-2
+text-[#023047]
+text-[13px]
+md:text-[20px]
+font-black
+tracking-[0.22em]
+uppercase
+mb-0
+">
               The Zyveniq Ecosystem
             </p>
 
@@ -1571,16 +1661,50 @@ function App() {
                 >
                   <FaWhatsapp size={22} />
                 </a>
+                                <a
+                  href="https://www.facebook.com/profile.php?id=61589999957861&rdid=5fKVvWF7iWbTp8gY&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DAhhCSzWh%2F#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300"
+                >
+                  <FaFacebook size={22} />
+                </a>
                 
               </div>
 
             </div>
 
           </div>
+          
+        
+{/* BRAND STATEMENT */}
 
-          <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-400">
-            © Zyveniq Pvt. Ltd. 2026. All Rights Reserved
-          </div>
+<div className="text-center mb-10">
+
+<p className="
+  text-white
+  text-[18px]
+  md:text-[25px]
+  font-black
+  tracking-[0.0em]
+  translate-y-10
+">
+    Crafted with
+    <span className="text-[#FFB703] mx-2">❤</span>
+    in NorthEast India
+  </p>
+
+</div>
+
+{/* COPYRIGHT */}
+
+<div className="pt-8 border-t border-white/10">
+
+  <div className="text-center text-gray-400 text-sm md:text-base">
+    © Zyveniq Pvt. Ltd. 2026. All Rights Reserved
+  </div>
+
+</div>
 
         </div>
 
@@ -1635,6 +1759,13 @@ function App() {
                 }
                 className="w-full px-6 py-5 rounded-2xl border border-gray-200 outline-none focus:border-[#FFB703]"
               />
+              <input
+  type="text"
+  placeholder="State (e.g. Karnataka)"
+  value={reviewState}
+  onChange={(e) => setReviewState(e.target.value)}
+  className="w-full px-6 py-5 rounded-2xl border border-gray-200 outline-none focus:border-[#FFB703]"
+/>
 
               <textarea
                 placeholder="Write your review..."
@@ -1646,6 +1777,7 @@ function App() {
                 }
                 className="w-full px-6 py-5 rounded-2xl border border-gray-200 outline-none resize-none focus:border-[#FFB703]"
               />
+              
               <p className="text-sm text-gray-400 mt-2 text-right">
                 {reviewText.length}/250
               </p>
@@ -1653,25 +1785,26 @@ function App() {
                 disabled={reviewLoading}
                 onClick={async () => {
 
-                  if (
-                    reviewName.trim().length < 3 ||
-                    reviewText.trim().length < 15
-                  ) {
-                    alert(
-                      "Please enter a proper name and meaningful review."
-                    );
-                    return;
-                   
-                  }
+if (
+  reviewName.trim().length < 3 ||
+  reviewState.trim().length < 2 ||
+  reviewText.trim().length < 15
+) {
+  alert(
+    "Please enter a proper name, state and meaningful review."
+  );
+  return;
+}
 
                   try {
                     setReviewLoading(true);
                     await axios.post(
                       "https://backend-7a2m.onrender.com/api/reviews/add/",
-                      {
-                        name: reviewName,
-                        review: reviewText,
-                      }
+{
+  name: reviewName,
+  state: reviewState,
+  review: reviewText,
+}
                     );
 
                     alert(
@@ -1680,6 +1813,7 @@ function App() {
 
                     setReviewName("");
                     setReviewText("");
+                    setReviewState("");
 
                     setShowReviewModal(false);
 

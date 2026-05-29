@@ -78,7 +78,7 @@ export default function FAQs() {
 
           </h1>
 
-          <p className="mt-8 text-gray-300 text-lg leading-9 max-w-3xl">
+          <p className="mt-8 text-white-300 text-lg leading-9 max-w-3xl">
 
             Everything you need to know about delivery,
             exchanges, sizing, payments, and the Zyveniq experience.
@@ -121,7 +121,7 @@ export default function FAQs() {
 
               {openFAQ === index && (
 
-                <div className="px-8 pb-8 text-black-600 leading-8 text-[16px] animate-[fadeIn_0.35s_ease]">
+                <div className="px-8 pb-8 text-black-600 leading-8 text-[20px] animate-[fadeIn_0.35s_ease]">
 
                   {faq.answer}
 
