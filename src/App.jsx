@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -26,7 +27,13 @@ import arjunImg from "./assets/arjun.jpg";
 import snehaImg from "./assets/sneha.jpg";
 import riyaImg from "./assets/riya.jpg";
 
-import poster from "./assets/poster.jpg";
+
+import flyer1 from "./assets/flyer1.png";
+import flyer2 from "./assets/flyer2.png";
+import flyer3 from "./assets/flyer3.png";
+import flyer4 from "./assets/flyer4.png";
+
+
 import {
   Routes,
   Route,
@@ -38,6 +45,12 @@ import FAQs from "./pages/FAQs";
 import ShippingPolicy from "./pages/ShippingPolicy";
 import ReturnsRefunds from "./pages/ReturnsRefunds";
 import ComingSoon from "./pages/ComingSoon";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 
 function App() {
@@ -57,6 +70,12 @@ function App() {
   const [reviewLoading, setReviewLoading] = useState(false);
   const [openInfo, setOpenInfo] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const flyers = [
+  flyer1,
+  flyer2,
+  flyer3,
+  flyer4,
+];
 
      useEffect(() => {
 
@@ -170,6 +189,7 @@ function App() {
     {
       name: "Arjun Mehta",
       role: "Fashion Creator",
+      state: "Mumbai, Maharashtra",
       text: "The branding and premium fashion direction already feels different from typical clothing startups.",
       highlight: false,
       image: arjunImg,
@@ -177,6 +197,7 @@ function App() {
     {
       name: "Sneha Kapoor",
       role: "Early Access Member",
+      state: "Bengaluru, Karnataka",
       text: "The website experience feels premium and modern. Excited to see the official launch collections.",
       highlight: true,
       image: snehaImg,
@@ -184,6 +205,7 @@ function App() {
     {
       name: "Riya Sharma",
       role: "Streetwear Enthusiast",
+      state: "Delhi",
       text: "Finally a fashion-tech brand that feels creative, clean, and genuinely premium.",
       highlight: false,
       image: riyaImg,
@@ -333,21 +355,21 @@ function App() {
 
           {/* CENTER LOGO */}
 
-          <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1 md:gap-4">
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-0">
 
             {/* LOGO */}
 
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-10 md:h-16 w-auto object-contain"
+            className="h-10 md:h-16 w-auto object-contain -mr-3 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
 
             <div className="flex flex-col leading-none">
 
-              <h1 className="text-[#023047] font-black tracking-[0.18em] text-lg md:text-4xl">
+              <h1 className="text-[#023047] font-black tracking-[0.12em] text-lg md:text-4xl">
                 ZYVENIQ
               </h1>
 
@@ -484,250 +506,161 @@ function App() {
         </div>
 
       </div>
-      
-      {/* ================= HERO SECTION ================= */}
 
-      <section className="relative min-h-screen flex items-center pt-14 md:pt-6 pb-20 overflow-hidden">
-
-        {/* BACKGROUND */}
-
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f5f9ff] via-[#ffffff] to-[#edf5fc]" />
-
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8ECAE6]/20 blur-3xl rounded-full" />
-
-        <div className="relative w-full px-4 md:px-10 xl:px-14">
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-            {/* LEFT SIDE */}
-
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-            >
-            {/* HERO BRANDING */}
-
-            <div className="flex items-center gap-0 mb-4 -mt-6 md:-mt-16 ml-[-38px] md:-ml-16 w-full">
-
-            <img
-              src={logo}
-              alt="Zyveniq"
-              className="w-40 md:w-52 object-contain"
-            />
-
-              <div className="-ml-9 md:-ml-12">
-
-                <h2 className="text-4xl md:text-5xl font-black text-[#023047] leading-none tracking-tight">
-                  ZYVENIQ
-                </h2>
-
-                <p className="text-[#FFB703] text-[11px] md:text-xs font-semibold uppercase tracking-[0.28em] ml-1 mt-1">
-                  Wear The Moment
-                </p>
-
-              </div>
-
-            </div>
-              {/* BADGE */}
-
-              <motion.div
-                animate={{
-                  y: [0, -3, 0],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 2.8,
-                }}
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#fff7df] to-[#ffffff] border border-[#FFD76A] shadow-[0_12px_35px_rgba(255,183,3,0.18)]"
-              >
-
-                <div className="relative flex items-center justify-center">
-
-                  <div className="absolute w-4 h-4 rounded-full bg-[#FFB703]/40 animate-ping"></div>
-
-                  <div className="relative w-3 h-3 rounded-full bg-[#FFB703]"></div>
-
-                </div>
-
-                <span className="text-[#023047] text-sm md:text-base font-bold tracking-wide">
-                  Early Access Launching Soon
-                </span>
-
-              </motion.div>
-              
-              {/* HEADING */}
-
-              <h1 className="mt-8 text-5xl md:text-6xl font-black leading-[1.05] text-[#023047]">
-
-                Fashion
-                <span className="text-[#FFB703]">
-                  {" "}Innovation{" "}
-                </span>
-                Reimagined.
-
-              </h1>
-
-              {/* DESCRIPTION */}
-
-              <p className="mt-8 text-black-600 text-lg leading-8 max-w-2xl">
-
-                Zyveniq blends luxury-inspired fashion,
-                modern culture, and intelligent digital
-                experiences into one premium ecosystem.
-
-              </p>
-
-              {/* TAGS */}
-
-              <div className="mt-10 flex flex-wrap gap-4">
-
-                <div className="px-5 py-3 bg-white shadow-lg rounded-full text-[#023047] font-medium">
-                  Premium Streetwear
-                </div>
-
-                <div className="px-5 py-3 bg-[#FFF5D9] rounded-full text-[#023047] font-medium">
-                  AI Styling
-                </div>
-
-                <div className="px-5 py-3 bg-[#EAF6FF] rounded-full text-[#023047] font-medium">
-                  Smart Fashion
-                </div>
-
-              </div>
-              
-              {/* EARLY ACCESS LINE */}
-
-              <div className="mt-5 mb-3">
-
-                <p className="text-[#023047] text-[15px] md:text-[16px] font-medium leading-7">
-
-                  Secure your spot among the
-                  <span className="text-[#FB8500] font-extrabold text-[17px]">
-                    {" "}first 100 members{" "}
-                  </span>
-                  and unlock exclusive launch pricing before public release.
-
-                </p>
-
-              </div>
-
-              {/* WAITLIST */}
-
-              <div
-                id="waitlist"
-                className="mt-0 scroll-mt-40 bg-white p-5 rounded-[30px] shadow-[0_25px_80px_rgba(0,0,0,0.08)] border border-gray-100"
-              >
-
-                {/* EMAIL FORM */}
-
-                <div className="flex flex-col md:flex-row gap-4">
-
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) =>
-                      setEmail(e.target.value)
-                    }
-                    className="flex-1 px-6 py-5 rounded-2xl border border-gray-200 outline-none text-[#023047] placeholder:text-black-400 focus:border-[#219EBC]"
-                  />
-
-                  <button
-                    onClick={handleSubscribe}
-                    disabled={loading}
-                    className="px-8 py-5 rounded-2xl bg-gradient-to-r from-[#FFB703] to-[#FB8500] text-[#023047] font-black hover:scale-105 transition-all duration-300 shadow-xl"
-                  >
-
-                    {loading
-                      ? "Please Wait..."
-                      : "Get Early Access"}
-
-                  </button>
-
-                </div>
-
-                {/* EMAIL MESSAGE */}
-
-                {message && (
-
-                  <p className="mt-4 text-[#219EBC] font-medium">
-                    {message}
-                  </p>
-
-                )}
-
-
-
-              </div>
-
-            </motion.div>
-
-            {/* RIGHT SIDE */}
-
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              className="relative"
-            >
-
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-[780px] object-cover rounded-[40px]"
-            >
-              <source src={heroVideo} type="video/mp4" />
-            </video>
-
-              {/* FLOATING CARD */}
-
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 4,
-                }}
-                className="absolute -bottom-10 -left-10 bg-white rounded-[30px] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.1)] max-w-[320px]"
-              >
-
-                <p className="text-[#219EBC] uppercase tracking-[0.3em] text-xs font-bold">
-                  Future Fashion
-                </p>
-
-                <h3 className="mt-4 text-3xl font-black text-[#023047] leading-tight">
-
-                  Designed For Modern Culture
-
-                </h3>
-
-                <button
-                  onClick={() => {
-                    document
-                      .getElementById("collections")
-                      ?.scrollIntoView({
-                        behavior: "smooth",
-                      });
-                  }}
-                  className="mt-6 flex items-center gap-3 text-[#FB8500] font-bold hover:gap-5 transition-all duration-300"
-                >
-                  Explore Vision
-                  <FaArrowRight />
-                </button>
-
-              </motion.div>
-
-            </motion.div>
+<section className="bg-[#F5F1EA] py-0 overflow-hidden">
+
+  <div className="w-full">
+
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      slidesPerView={1}
+      spaceBetween={0}
+      loop={true}
+      speed={1200}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      navigation
+      pagination={{
+        clickable: true,
+      }}
+      className="zyveniqFlyerSwiper"
+    >
+
+      {flyers.map((flyer, index) => (
+
+        <SwiperSlide key={index}>
+
+          <div className="overflow-hidden rounded-none bg-white shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
+
+<img
+  src={flyer}
+  alt=""
+  className="w-full h-auto block"
+/>
 
           </div>
 
+        </SwiperSlide>
+
+      ))}
+
+    </Swiper>
+
+  </div>
+
+</section>
+
+      
+{/* ================= HERO ================= */}
+
+<section className="relative h-[100svh] overflow-hidden bg-[#F5F1EA]">
+
+  {/* VIDEO BACKGROUND */}
+
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src={heroVideo} type="video/mp4" />
+  </video>
+
+  {/* DARK OVERLAY */}
+
+  <div className="absolute inset-0 bg-black/35" />
+
+  {/* SOFT GRAIN */}
+
+  <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
+
+  {/* CONTENT */}
+
+  <div className="relative z-10 h-full flex flex-col justify-between">
+
+    {/* TOP */}
+
+    <div className="max-w-[1500px] mx-auto w-full px-5 md:px-10 pt-28 md:pt-36">
+
+      {/* COMING SOON */}
+
+      <p className="text-white/70 text-xs md:text-sm tracking-[0.45em] uppercase font-medium">
+
+        Coming Soon
+
+      </p>
+
+      {/* HUGE HERO */}
+
+      <h1 className="editorial-font mt-5 text-[#F8F5F0] text-[68px] md:text-[180px] leading-[0.82] tracking-[-0.08em] font-semibold max-w-[900px]">
+
+        Wear
+        <br />
+        The Moment.
+
+      </h1>
+
+    </div>
+
+    {/* BOTTOM BAR */}
+
+    <div className="w-full border-t border-white/10 backdrop-blur-md bg-black/10">
+
+      <div className="max-w-[1500px] mx-auto px-5 md:px-10 py-6 md:py-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+
+        {/* LEFT */}
+
+        <div>
+
+          <p className="text-[#F8F5F0] text-lg md:text-2xl font-medium">
+
+            Be part of the first release.
+
+          </p>
+
         </div>
 
-      </section>
+        {/* EMAIL */}
+
+        <div
+          id="waitlist"
+          className="flex w-full lg:w-auto flex-col md:flex-row gap-4"
+        >
+
+          <input
+            type="email"
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full md:w-[340px] h-[64px] rounded-full bg-white/10 border border-white/10 px-7 text-white placeholder:text-white/100 outline-none backdrop-blur-xl"
+          />
+
+          <button
+            onClick={handleSubscribe}
+            disabled={loading}
+            className="h-[64px] px-10 rounded-full bg-white text-black font-semibold tracking-[0.08em] hover:bg-[#EAE4DA] transition-all duration-500"
+          >
+
+            {loading
+              ? "PLEASE WAIT..."
+              : "REQUEST ACCESS"}
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 
       {/* ================= TESTIMONIALS ================= */}
 
@@ -751,18 +684,21 @@ function App() {
 
             </h2>
 
-            <p className="mt-8 max-w-2xl mx-auto text-black-600 text-lg leading-8">
+<p className="mt-8 max-w-2xl mx-auto text-black-600 text-lg leading-8">
 
-              Early users and fashion creators are already excited
-              about the future Zyveniq experience.
+  Hundreds of fashion enthusiasts have already shared
+  their thoughts about Zyveniq. Now it's your turn to
+  join the conversation.
 
-            </p>
+</p>
+
+            
 
           </div>
 
           {/* REVIEW BUTTON */}
 
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-4">
 
             <button
               onClick={() => setShowReviewModal(true)}
@@ -817,15 +753,27 @@ function App() {
                       {review.name}
                     </h3>
 
-                    <p
-                      className={`text-sm ${
-                        review.highlight
-                          ? "text-black-300"
-                          : "text-black-500"
-                      }`}
-                    >
-                      {review.role}
-                    </p>
+<div>
+  <p
+    className={`text-sm ${
+      review.highlight
+        ? "text-white/80"
+        : "text-black/100"
+    }`}
+  >
+    {review.role}
+  </p>
+
+  <p
+    className={`text-xs mt-1 ${
+      review.highlight
+        ? "text-white/80"
+        : "text-black/100"
+    }`}
+  >
+    {review.state}
+  </p>
+</div>
 
                   </div>
 
@@ -834,12 +782,12 @@ function App() {
                 <p
                   className={`mt-6 leading-8 ${
                     review.highlight
-                      ? "text-white/80"
+                      ? "text-white/100"
                       : "text-black-600"
                   }`}
                 >
 
-                  “{review.text}”
+                  {review.text}
 
                 </p>
 
@@ -1619,7 +1567,7 @@ function App() {
                   href="https://wa.me/9365005324"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-full bg-[#f4f7fb] flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300"
+                  className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300"
                 >
                   <FaWhatsapp size={22} />
                 </a>
@@ -1747,7 +1695,7 @@ function App() {
                   }
 
 }}
-                className="w-full py-5 rounded-2xl bg-gradient-to-r from-[#FFB703] to-[#FB8500] text-[#023047] font-black hover:scale-[1.02] transition-all duration-300 shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full py-5 rounded-2xl bg-[#023047] text-white text-[#023047] font-black hover:scale-[1.02] transition-all duration-300 shadow-[8px_8px_0px_rgba(2,48,71,0.12)] disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {reviewLoading ? "Submitting..." : "Submit Review"}
       
@@ -1816,7 +1764,7 @@ function App() {
 
               <button
                 onClick={checkAvailability}
-                className="w-full mt-5 py-5 rounded-2xl bg-gradient-to-r from-[#FFB703] to-[#FB8500] text-[#023047] font-black hover:scale-[1.02] transition-all duration-300 shadow-xl"
+                className="w-full mt-5 py-5 rounded-2xl bg-gradient-to-r from-[#FFB703] to-[#D4A017] text-[#023047] font-black hover:scale-[1.02] transition-all duration-300 shadow-xl"
               >
                 Check Availability
               </button>

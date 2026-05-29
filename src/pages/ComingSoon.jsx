@@ -40,7 +40,11 @@ export default function ComingSoon() {
 
           <br /><br />
 
-          Check back soon.
+<h2 className="text-white/100 text-3xl md:text-3xl lg:text-7xl font-black tracking-[0.45em] uppercase mb-8">
+
+  Coming Soon
+
+</h2>
 
         </p>
 
