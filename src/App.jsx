@@ -375,7 +375,7 @@ z-10
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-10 md:h-16 w-auto object-contain -mr-5 md:-mr-9"
+            className="h-10 md:h-16 w-auto object-contain -mr-7 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
