@@ -367,18 +367,18 @@ const formattedReviews = response.data.map(
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-8 md:h-16 w-auto object-contain -mr-3 md:-mr-9"
+            className="h-7 md:h-16 w-auto object-contain -mr-3 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
 
             <div className="flex flex-col leading-none">
 
-              <h1 className="text-[#023047] font-black tracking-[0.12em] text-base md:text-4xl">
+              <h1 className="text-[#023047] font-black tracking-[0.12em] text-[11px] md:text-4xl">
                 ZYVENIQ
               </h1>
 
-              <p className="text-[#D4A017] text-[7px] md:text-[12px] tracking-[0.35em] mt-1 uppercase font-semibold">
+              <p className="text-[#D4A017] text-[6px] md:text-[12px] tracking-[0.18em] md:tracking-[0.3em] mt-1 uppercase font-semibold">
                 WEAR THE MOMENT
               </p>
 
@@ -396,9 +396,9 @@ const formattedReviews = response.data.map(
                   behavior: "smooth",
                 });
             }}
-           className="inline-flex items-center gap-2 px-2.5 md:px-7 py-2 md:py-3 mr-1 md:mr-2 rounded-full bg-gradient-to-r from-[#FFE082] via-[#FFD54F] to-[#FFCA28] text-[#023047] font-bold border border-[#F4B400] hover:scale-105 transition-all duration-300 shadow-[0_0_25px_rgba(255,193,7,0.45)] hover:shadow-[0_0_40px_rgba(255,193,7,0.7)]"
+           className="inline-flex items-center gap-2 px-2 md:px-7 py-2 md:py-3 mr-1 md:mr-2 rounded-full bg-gradient-to-r from-[#FFE082] via-[#FFD54F] to-[#FFCA28] text-[#023047] font-bold border border-[#F4B400] hover:scale-105 transition-all duration-300 shadow-[0_0_25px_rgba(255,193,7,0.45)] hover:shadow-[0_0_40px_rgba(255,193,7,0.7)]"
           >
-            <span className="text-[#023047] text-[10px] md:text-sm font-bold tracking-wide">
+            <span className="text-[#023047] text-[9px] md:text-sm font-bold tracking-wide">
               Join Waitlist
             </span>
           </button>
@@ -423,8 +423,8 @@ fixed
 top-0
 left-0
 h-screen
-w-[85vw]
-max-w-[340px]
+w-[78vw]
+max-w-[320px]
 z-[9999]
 bg-white
 p-8
@@ -457,12 +457,12 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 
         </div>
 
-        <div className="mt-16 flex flex-col pb-40">
+        <div className="mt-10 flex flex-col pb-28">
 
   <Link
     to="/"
     onClick={() => setShowMenu(false)}
-    className="group flex items-center justify-between py-5 text-[20px] md:text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+    className="group flex items-center justify-between py-4 text-[18px] md:text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
   >
     Home
     <span className="text-[#FFB703] opacity-70">→</span>
@@ -471,7 +471,7 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
   <Link
     to="/about"
     onClick={() => setShowMenu(false)}
-    className="group flex items-center justify-between py-5 border-t border-[#023047]/8 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+    className="group flex items-center justify-between py-4 border-t border-[#023047]/8 text-[18px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
   >
     About Us
     <span className="text-[#FFB703] opacity-70">→</span>
@@ -480,7 +480,7 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
   <Link
     to="/contact"
     onClick={() => setShowMenu(false)}
-    className="group flex items-center justify-between py-5 border-t border-[#023047]/8 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+    className="group flex items-center justify-between py-4 border-t border-[#023047]/8 text-[18px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
   >
     Contact Us
     <span className="text-[#FFB703] opacity-70">→</span>
@@ -489,14 +489,14 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
   <Link
     to="/faqs"
     onClick={() => setShowMenu(false)}
-    className="group flex items-center justify-between py-5 border-t border-[#023047]/8 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+    className="group flex items-center justify-between py-4 border-t border-[#023047]/8 text-[18px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
   >
     FAQs
     <span className="text-[#FFB703] opacity-70">→</span>
   </Link>
 
 </div>
-        <div className="absolute bottom-8 left-8 right-8">
+        <div className="absolute bottom-6 left-6 right-6">
 
 <div className="border-t border-[#023047]/10 pt-6">
 
@@ -653,10 +653,10 @@ bg-[#F5F1EA]
 editorial-font
 mt-5
 text-[#F8F5F0]
-text-[58px]
-sm:text-[70px]
+text-[44px]
+sm:text-[58px]
 md:text-[180px]
-leading-[0.85]
+leading-[0.95]
 md:leading-[0.82]
 tracking-[-0.06em]
 md:tracking-[-0.08em]

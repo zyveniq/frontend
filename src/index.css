@@ -60,3 +60,21 @@ body {
   background: #023047;
   opacity: 1;
 }
+@media (max-width: 768px) {
+
+  .zyveniqFlyerSwiper .swiper-pagination {
+    bottom: 8px !important;
+  }
+
+  .zyveniqFlyerSwiper .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    margin: 0 4px !important;
+  }
+
+  .zyveniqFlyerSwiper .swiper-pagination-bullet-active {
+    width: 22px;
+    border-radius: 999px;
+  }
+
+}
