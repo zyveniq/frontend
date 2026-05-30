@@ -360,13 +360,13 @@ const formattedReviews = response.data.map(
 
           {/* CENTER LOGO */}
 
-          <div className="
+<div className="
 absolute
 left-1/2
 -translate-x-1/2
 flex
 items-center
-gap-1
+gap-0
 z-10
 ">
 
@@ -375,7 +375,7 @@ z-10
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-10 md:h-16 w-auto object-contain -mr-2 md:-mr-9"
+            className="h-12 md:h-16 w-auto object-contain -mr-5 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
@@ -386,7 +386,17 @@ z-10
                 ZYVENIQ
               </h1>
 
-              <p className="text-[#D4A017] text-[8px] md:text-[12px] tracking-[0.22em] md:tracking-[0.3em] mt-1 uppercase font-semibold">
+              <p className="
+text-[#D4A017]
+text-[6px]
+md:text-[12px]
+tracking-[0.12em]
+md:tracking-[0.3em]
+mt-1
+uppercase
+font-semibold
+whitespace-nowrap
+">
                 WEAR THE MOMENT
               </p>
 
