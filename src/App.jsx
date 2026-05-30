@@ -367,14 +367,14 @@ const formattedReviews = response.data.map(
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-10 md:h-16 w-auto object-contain -mr-3 md:-mr-9"
+            className="h-8 md:h-16 w-auto object-contain -mr-3 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
 
             <div className="flex flex-col leading-none">
 
-              <h1 className="text-[#023047] font-black tracking-[0.12em] text-lg md:text-4xl">
+              <h1 className="text-[#023047] font-black tracking-[0.12em] text-base md:text-4xl">
                 ZYVENIQ
               </h1>
 
@@ -396,9 +396,9 @@ const formattedReviews = response.data.map(
                   behavior: "smooth",
                 });
             }}
-           className="inline-flex items-center gap-2 px-3 md:px-7 py-2 md:py-3 mr-1 md:mr-2 rounded-full bg-gradient-to-r from-[#FFE082] via-[#FFD54F] to-[#FFCA28] text-[#023047] font-bold border border-[#F4B400] hover:scale-105 transition-all duration-300 shadow-[0_0_25px_rgba(255,193,7,0.45)] hover:shadow-[0_0_40px_rgba(255,193,7,0.7)]"
+           className="inline-flex items-center gap-2 px-2.5 md:px-7 py-2 md:py-3 mr-1 md:mr-2 rounded-full bg-gradient-to-r from-[#FFE082] via-[#FFD54F] to-[#FFCA28] text-[#023047] font-bold border border-[#F4B400] hover:scale-105 transition-all duration-300 shadow-[0_0_25px_rgba(255,193,7,0.45)] hover:shadow-[0_0_40px_rgba(255,193,7,0.7)]"
           >
-            <span className="text-[#023047] text-[11px] md:text-sm font-bold tracking-wide">
+            <span className="text-[#023047] text-[10px] md:text-sm font-bold tracking-wide">
               Join Waitlist
             </span>
           </button>
@@ -423,7 +423,8 @@ fixed
 top-0
 left-0
 h-screen
-w-[340px]
+w-[85vw]
+max-w-[340px]
 z-[9999]
 bg-white
 p-8
@@ -461,7 +462,7 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
   <Link
     to="/"
     onClick={() => setShowMenu(false)}
-    className="group flex items-center justify-between py-5 text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
+    className="group flex items-center justify-between py-5 text-[20px] md:text-[24px] font-semibold text-[#023047] hover:text-[#FFB703] transition-all"
   >
     Home
     <span className="text-[#FFB703] opacity-70">→</span>
@@ -499,11 +500,11 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 
 <div className="border-t border-[#023047]/10 pt-6">
 
-  <h3 className="text-[#023047] text-lg font-bold tracking-wide">
+  <h3 className="text-[#023047] text-xl font-bold tracking-[0.08em]">
     <span className="text-[#FFB703]">ZYV</span>ENIQ
   </h3>
 
-  <p className="mt-2 text-[#023047]/60 text-sm leading-6">
+  <p className="mt-3 text-[#023047]/55 text-[13px] leading-6">
     Fashion. Culture. Technology.
   </p>
 
@@ -602,7 +603,13 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
       
 {/* ================= HERO ================= */}
 
-<section className="relative h-[100svh] overflow-hidden bg-[#F5F1EA]">
+<section className="
+relative
+min-h-[85vh]
+md:h-[100svh]
+overflow-hidden
+bg-[#F5F1EA]
+">
 
   {/* VIDEO BACKGROUND */}
 
@@ -642,7 +649,20 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 
       {/* HUGE HERO */}
 
-      <h1 className="editorial-font mt-5 text-[#F8F5F0] text-[68px] md:text-[180px] leading-[0.82] tracking-[-0.08em] font-semibold max-w-[900px]">
+      <h1 className="
+editorial-font
+mt-5
+text-[#F8F5F0]
+text-[58px]
+sm:text-[70px]
+md:text-[180px]
+leading-[0.85]
+md:leading-[0.82]
+tracking-[-0.06em]
+md:tracking-[-0.08em]
+font-semibold
+max-w-[900px]
+">
 
         Wear
         <br />
@@ -968,7 +988,15 @@ transition={{
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-[680px] object-cover transition duration-700 group-hover:scale-110"
+                  className="
+w-full
+h-[420px]
+md:h-[680px]
+object-cover
+transition
+duration-700
+group-hover:scale-110
+"
                 />
 
                 {/* DARK OVERLAY */}
