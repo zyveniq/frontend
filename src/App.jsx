@@ -360,25 +360,33 @@ const formattedReviews = response.data.map(
 
           {/* CENTER LOGO */}
 
-          <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-0">
+          <div className="
+absolute
+left-1/2
+-translate-x-1/2
+flex
+items-center
+gap-1
+z-10
+">
 
             {/* LOGO */}
 
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-7 md:h-16 w-auto object-contain -mr-3 md:-mr-9"
+            className="h-10 md:h-16 w-auto object-contain -mr-2 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
 
             <div className="flex flex-col leading-none">
 
-              <h1 className="text-[#023047] font-black tracking-[0.12em] text-[11px] md:text-4xl">
+              <h1 className="text-[#023047] font-black tracking-[0.12em] text-[16px] md:text-4xl">
                 ZYVENIQ
               </h1>
 
-              <p className="text-[#D4A017] text-[6px] md:text-[12px] tracking-[0.18em] md:tracking-[0.3em] mt-1 uppercase font-semibold">
+              <p className="text-[#D4A017] text-[8px] md:text-[12px] tracking-[0.22em] md:tracking-[0.3em] mt-1 uppercase font-semibold">
                 WEAR THE MOMENT
               </p>
 
@@ -605,7 +613,7 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 
 <section className="
 relative
-min-h-[85vh]
+min-h-[100vh]
 md:h-[100svh]
 overflow-hidden
 bg-[#F5F1EA]
@@ -633,11 +641,21 @@ bg-[#F5F1EA]
 
   {/* CONTENT */}
 
-  <div className="relative z-10 h-full flex flex-col justify-between">
+  <div
+className="
+relative
+z-10
+h-full
+min-h-[100vh]
+flex
+flex-col
+justify-between
+"
+>
 
     {/* TOP */}
 
-    <div className="max-w-[1500px] mx-auto w-full px-5 md:px-10 pt-28 md:pt-36">
+    <div className="max-w-[1500px] mx-auto w-full px-5 md:px-10 pt-24 md:pt-36">
 
       {/* COMING SOON */}
 
@@ -653,15 +671,16 @@ bg-[#F5F1EA]
 editorial-font
 mt-5
 text-[#F8F5F0]
-text-[44px]
-sm:text-[58px]
+text-[72px]
+sm:text-[80px]
 md:text-[180px]
 leading-[0.95]
 md:leading-[0.82]
 tracking-[-0.06em]
 md:tracking-[-0.08em]
 font-semibold
-max-w-[900px]
+max-w-[500px]
+md:max-w-[900px]
 ">
 
         Wear
@@ -692,10 +711,18 @@ max-w-[900px]
 
         {/* EMAIL */}
 
-        <div
-          id="waitlist"
-          className="flex w-full lg:w-auto flex-col md:flex-row gap-4"
-        >
+<div
+id="waitlist"
+className="
+flex
+w-full
+lg:w-auto
+flex-col
+md:flex-row
+gap-4
+mt-auto
+"
+>
 
           <input
             type="email"

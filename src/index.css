@@ -78,3 +78,11 @@ body {
   }
 
 }
+@media (max-width: 768px) {
+
+  .zyveniqFlyerSwiper .swiper-button-next,
+  .zyveniqFlyerSwiper .swiper-button-prev {
+    display: none !important;
+  }
+
+}
