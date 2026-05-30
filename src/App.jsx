@@ -366,7 +366,7 @@ left-1/2
 -translate-x-1/2
 flex
 items-center
-gap-0
+justify-center
 z-10
 ">
 
@@ -375,12 +375,12 @@ z-10
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-12 md:h-16 w-auto object-contain -mr-5 md:-mr-9"
+            className="h-12 md:h-16 w-auto object-contain -mr-7 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
 
-            <div className="flex flex-col leading-none">
+            <div className="flex flex-col leading-none justify-center">
 
               <h1 className="text-[#023047] font-black tracking-[0.12em] text-[16px] md:text-4xl">
                 ZYVENIQ
@@ -392,7 +392,7 @@ text-[6px]
 md:text-[12px]
 tracking-[0.12em]
 md:tracking-[0.3em]
-mt-1
+mt-[2px]
 uppercase
 font-semibold
 whitespace-nowrap
