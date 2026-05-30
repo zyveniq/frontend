@@ -879,8 +879,15 @@ mb-0
       </FadeUp>
       {/* ================= COLLECTIONS ================= */}
       <FadeUp>
-      <section
-        id="collections"
+<motion.section
+  id="collections"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{
+    duration: 0.9,
+    ease: [0.22, 1, 0.36, 1],
+  }}
         className="py-20 bg-white"
       >
 
@@ -943,7 +950,13 @@ mb-0
               >
               <motion.div
                 key={index}
-                whileHover={{ y: -10 }}
+                whileHover={{
+  y: -10,
+  scale: 1.015,
+}}
+transition={{
+  duration: 0.35,
+}}
                 className="relative rounded-[35px] overflow-hidden group cursor-pointer
                 shadow-[12px_14px_35px_rgba(0,0,0,0.679)]
                 hover:shadow-[18px_20px_60px_rgba(0,0,0,0.35)]
@@ -989,7 +1002,7 @@ mb-0
 
         </div>
 
-      </section>
+      </motion.section>
       </FadeUp>
       {/* ================= SOUL OF ZYVENIQ ================= */}
       <FadeUp>
