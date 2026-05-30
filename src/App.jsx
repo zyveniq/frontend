@@ -362,7 +362,7 @@ const formattedReviews = response.data.map(
 
 <div className="
 absolute
-left-1/2
+left-[45%]
 -translate-x-1/2
 flex
 items-center
@@ -375,7 +375,7 @@ z-10
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-12 md:h-16 w-auto object-contain -mr-7 md:-mr-9"
+            className="h-10 md:h-16 w-auto object-contain -mr-5 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
