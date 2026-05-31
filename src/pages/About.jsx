@@ -9,9 +9,9 @@ export default function About() {
     <div className="bg-[#f5f5f3] text-[#0b2341]">
 
       {/* HERO STRIP */}
-      <section className="bg-[#0b2341] pt-32 text-white py-24 px-6">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#071a33] via-[#0b2341] to-[#102d53] pt-36 pb-32 px-6 text-white">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="uppercase tracking-[8px] text-[#f4b400] text-sm mb-6">
+          <p className="uppercase tracking-[12px] text-[#f4b400] text-sm mb-6">
             Wear The Moment
           </p>
 
@@ -29,7 +29,10 @@ export default function About() {
       </section>
 
       {/* STORY SECTION */}
-      <section className="py-24 px-6">
+      <section className="relative py-28 px-6 overflow-hidden">
+<div className="absolute -left-20 top-20 w-72 h-72 bg-[#f4b400]/5 rounded-full blur-3xl"></div>
+
+        <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#0b2341]/5 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
           <div>
@@ -64,7 +67,20 @@ export default function About() {
           </div>
 
           <div className="relative">
-            <div className="bg-white rounded-[40px] p-10 shadow-2xl">
+                        <div className="absolute inset-0 bg-[#f4b400]/10 blur-3xl rounded-full scale-75"></div>
+            <div
+              className="
+                bg-white/80
+                backdrop-blur-xl
+                border border-white/40
+                rounded-[40px]
+                p-10
+                shadow-[0_25px_60px_rgba(0,0,0,0.08)]
+                hover:-translate-y-2
+                transition-all
+                duration-500
+               "
+            >
                 <img
                 src={logo}
                 alt="Zyveniq"
@@ -181,7 +197,7 @@ export default function About() {
 
           <div className="space-y-8">
 
-            <div className="bg-white rounded-[30px] p-10 shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="bg-white rounded-[30px] p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <h3 className="text-3xl font-black mb-4">
                   AI Fashion Intelligence
@@ -199,7 +215,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-[#0b2341] text-white rounded-[30px] p-10 shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="bg-[#0b2341] text-white rounded-[30px] p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <h3 className="text-3xl font-black mb-4">
                   Hyperlocal Fashion Delivery
@@ -217,7 +233,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-white rounded-[30px] p-10 shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="bg-white rounded-[30px] p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <h3 className="text-3xl font-black mb-4">
                   Creator & Community Ecosystem
