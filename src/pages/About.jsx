@@ -88,22 +88,22 @@ export default function About() {
               />
 
               <div className="space-y-5">
-                <div className="flex justify-between border-b pb-4">
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
                   <span className="font-semibold">AI Styling</span>
                   <span className="text-[#f4b400] font-bold">Active</span>
                 </div>
 
-                <div className="flex justify-between border-b pb-4">
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
                   <span className="font-semibold">Smart Fashion</span>
                   <span className="text-[#f4b400] font-bold">Building</span>
                 </div>
 
-                <div className="flex justify-between border-b pb-4">
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
                   <span className="font-semibold">Creator Ecosystem</span>
                   <span className="text-[#f4b400] font-bold">Growing</span>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
                   <span className="font-semibold">Hyperlocal Commerce</span>
                   <span className="text-[#f4b400] font-bold">Scaling</span>
                 </div>
