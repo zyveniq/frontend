@@ -9,9 +9,10 @@ export default function About() {
     <div className="bg-[#f5f5f3] text-[#0b2341]">
 
       {/* HERO STRIP */}
-      <section className="bg-[#0b2341] pt-32 text-white py-24 px-6">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#071a33] via-[#0b2341] to-[#102d53] pt-36 pb-32 px-6 text-white">
+        
         <div className="max-w-6xl mx-auto text-center">
-          <p className="uppercase tracking-[8px] text-[#f4b400] text-sm mb-6">
+          <p className="uppercase tracking-[12px] text-[#f4b400] text-xl mb-6">
             Wear The Moment
           </p>
 
@@ -29,7 +30,12 @@ export default function About() {
       </section>
 
       {/* STORY SECTION */}
-      <section className="py-24 px-6">
+      <section className="relative py-28 px-6 overflow-hidden">
+
+        <div className="absolute -left-20 top-20 w-72 h-72 bg-[#f4b400]/5 rounded-full blur-3xl"></div>
+
+        <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#0b2341]/5 rounded-full blur-3xl"></div>
+
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
           <div>
@@ -64,32 +70,74 @@ export default function About() {
           </div>
 
           <div className="relative">
-            <div className="bg-white rounded-[40px] p-10 shadow-2xl">
+            <div className="absolute inset-0 bg-[#f4b400]/10 blur-3xl rounded-full scale-75"></div>
+            <div
+              className="
+                bg-white/80
+                backdrop-blur-xl
+                border border-white/40
+                rounded-[40px]
+                p-10
+                shadow-[0_25px_60px_rgba(0,0,0,0.08)]
+                hover:-translate-y-2
+                transition-all
+                duration-500
+               "
+            >
                 <img
                 src={logo}
                 alt="Zyveniq"
-                className="w-44 mx-auto mb-8"
+                className="w-44 mx-auto mb-8 transition-all duration-500 hover:scale-105"
               />
 
+              <div className="mb-6 text-center">
+                <p className="uppercase tracking-[4px] text-xs text-gray-400">
+                  Ecosystem Status
+                </p>
+              </div>
               <div className="space-y-5">
-                <div className="flex justify-between border-b pb-4">
-                  <span className="font-semibold">AI Styling</span>
-                  <span className="text-[#f4b400] font-bold">Active</span>
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
+                  <span className="font-semibold transition-colors duration-300 hover:text-[#f4b400]">
+                    AI Styling
+                  </span>
+
+                  <span className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f4b400]/10 text-[#f4b400] text-sm font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-[#f4b400] animate-pulse"></span>
+                    Live
+                  </span>
                 </div>
 
-                <div className="flex justify-between border-b pb-4">
-                  <span className="font-semibold">Smart Fashion</span>
-                  <span className="text-[#f4b400] font-bold">Building</span>
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
+                  <span className="font-semibold transition-colors duration-300 hover:text-[#f4b400]">
+                    Smart Fashion
+                  </span>
+
+                  <span className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f4b400]/10 text-[#f4b400] text-sm font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-[#f4b400] animate-pulse"></span>
+                  In Progress
+                  </span>
                 </div>
 
-                <div className="flex justify-between border-b pb-4">
-                  <span className="font-semibold">Creator Ecosystem</span>
-                  <span className="text-[#f4b400] font-bold">Growing</span>
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
+                  <span className="font-semibold transition-colors duration-300 hover:text-[#f4b400]">
+                    Creator Ecosystem
+                  </span>
+
+                  <span className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f4b400]/10 text-[#f4b400] text-sm font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-[#f4b400] animate-pulse"></span>
+                    Expanding
+                  </span>
                 </div>
 
-                <div className="flex justify-between">
-                  <span className="font-semibold">Hyperlocal Commerce</span>
-                  <span className="text-[#f4b400] font-bold">Scaling</span>
+                <div className="flex justify-between items-center border-b pb-4 transition-all duration-300 hover:translate-x-2 cursor-pointer">
+                  <span className="font-semibold transition-colors duration-300 hover:text-[#f4b400]">
+                    Hyperlocal Commerce
+                  </span>
+
+                  <span className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f4b400]/10 text-[#f4b400] text-sm font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-[#f4b400] animate-pulse"></span>
+                    Scaling
+                    </span>
                 </div>
               </div>
             </div>
@@ -167,6 +215,27 @@ export default function About() {
         </div>
       </section>
 
+      <section className="py-24 px-6 bg-white">
+  <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+
+    <div className="text-center">
+      <h3 className="text-5xl font-black text-[#0b2341]">AI</h3>
+      <p className="text-gray-500 mt-2">Powered Styling</p>
+    </div>
+
+    <div className="text-center">
+      <h3 className="text-5xl font-black text-[#0b2341]">NEXT</h3>
+      <p className="text-gray-500 mt-2">Future of Fashion</p>
+    </div>
+
+    <div className="text-center">
+      <h3 className="text-5xl font-black text-[#0b2341]">1</h3>
+      <p className="text-gray-500 mt-2">Unified Ecosystem</p>
+    </div>
+
+  </div>
+</section>
+
       {/* DIFFERENCE SECTION */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
@@ -175,13 +244,13 @@ export default function About() {
             What Makes Us Different
           </p>
 
-          <h2 className="text-5xl font-black mb-16">
+          <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-16">
             Designed Beyond Traditional Ecommerce
           </h2>
 
           <div className="space-y-8">
 
-            <div className="bg-white rounded-[30px] p-10 shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="bg-white rounded-[30px] p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <h3 className="text-3xl font-black mb-4">
                   AI Fashion Intelligence
@@ -199,7 +268,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-[#0b2341] text-white rounded-[30px] p-10 shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="bg-[#0b2341] text-white rounded-[30px] p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <h3 className="text-3xl font-black mb-4">
                   Hyperlocal Fashion Delivery
@@ -217,7 +286,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-white rounded-[30px] p-10 shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+           <div className="bg-white rounded-[30px] p-10 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <h3 className="text-3xl font-black mb-4">
                   Creator & Community Ecosystem
@@ -241,10 +310,10 @@ export default function About() {
       </section>
 
       {/* FINAL STATEMENT */}
-      <section className="bg-white py-32 px-6 border-t">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="bg-white py-20 md:py-24 px-6 border-t">
+        <div className="max-w-5xl mx-auto text-center -mt-8">
 
-          <p className="uppercase tracking-[7px] text-[#f4b400] text-sm mb-6">
+          <p className="uppercase tracking-[7px] text-[#f4b400] text-xl mb-6">
             Zyveniq
           </p>
 
@@ -252,6 +321,10 @@ export default function About() {
             Fashion Is Evolving. <br />
             We’re Building <span className="text-[#f4b400]">What Comes Next.</span>
           </h2>
+
+          <p className="mt-8 text-xl text-gray-500 max-w-2xl mx-auto">
+            Merging fashion, technology, and culture into a new digital experience.
+          </p>
 
         </div>
       </section>

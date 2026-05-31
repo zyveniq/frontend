@@ -624,12 +624,11 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 <section className="bg-[#023047] overflow-hidden py-3 border-y border-[#D4A017]/20">
   <div className="animate-marquee whitespace-nowrap flex">
     <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-       • ZYVENIQ • LAUNCHING SOON •
+      • ZYVENIQ • LAUNCHING SOON •
     </span>
     <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
       • ZYVENIQ • LAUNCHING SOON •
     </span>
-
     <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
       • ZYVENIQ • LAUNCHING SOON •
     </span>
