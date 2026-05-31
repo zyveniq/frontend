@@ -86,3 +86,19 @@ body {
   }
 
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.33%);
+  }
+}
+
+.animate-marquee {
+  width: max-content;
+  display: flex;
+  animation: marquee 18s linear infinite;
+}

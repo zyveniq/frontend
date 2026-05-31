@@ -621,6 +621,28 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
       
 {/* ================= HERO ================= */}
 
+<section className="bg-[#023047] overflow-hidden py-3 border-y border-[#D4A017]/20">
+  <div className="animate-marquee whitespace-nowrap flex">
+    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
+       • ZYVENIQ • LAUNCHING SOON •
+    </span>
+    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
+      • ZYVENIQ • LAUNCHING SOON •
+    </span>
+
+    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
+      • ZYVENIQ • LAUNCHING SOON •
+    </span>
+    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
+      • ZYVENIQ • LAUNCHING SOON •
+    </span>
+    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
+      • ZYVENIQ • LAUNCHING SOON •
+    </span>
+
+  </div>
+</section>
+
 <section className="
 relative
 min-h-[100vh]
@@ -1035,6 +1057,13 @@ duration-700
 group-hover:scale-110
 "
                 />
+                <div className="absolute top-5 right-0.1 z-20">
+                  <img
+                    src={logo}
+                    alt="Zyveniq"
+                    className="h-10 md:h-12 w-auto opacity-95"
+                 />
+                </div>
 
                 {/* DARK OVERLAY */}
 
