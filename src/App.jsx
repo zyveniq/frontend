@@ -190,15 +190,15 @@ function App() {
 
   const defaultTestimonials = [
     {
-      name: "Arjun Mehta",
-      role: "Fashion Creator",
+      name: "Manoj Kumar",
+      role: "Early Access Member",
       state: "Mumbai, Maharashtra",
       text: "The branding and premium fashion direction already feels different from typical clothing startups.",
       highlight: false,
       image: arjunImg,
     },
     {
-      name: "Sneha Kapoor",
+      name: "Nithya Gowda",
       role: "Early Access Member",
       state: "Bengaluru, Karnataka",
       text: "The website experience feels premium and modern. Excited to see the official launch collections.",
@@ -206,9 +206,9 @@ function App() {
       image: snehaImg,
     },
     {
-      name: "Riya Sharma",
-      role: "Streetwear Enthusiast",
-      state: "Delhi",
+      name: "Dipali Das",
+      role: "Early Access Member",
+      state: "Assam",
       text: "Finally a fashion-tech brand that feels creative, clean, and genuinely premium.",
       highlight: false,
       image: riyaImg,
@@ -603,7 +603,14 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 <img
   src={flyer}
   alt=""
-  className="w-full h-auto block"
+  className="
+    w-full
+    h-[280px]
+    sm:h-[350px]
+    md:h-auto
+    object-cover
+    block
+  "
 />
 
           </div>
