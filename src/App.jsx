@@ -34,7 +34,10 @@ import flyer1 from "./assets/flyer1.png";
 import flyer2 from "./assets/flyer2.png";
 import flyer3 from "./assets/flyer3.png";
 import flyer4 from "./assets/flyer4.png";
-
+import flyer1Mobile from "./assets/flyer1-mobile.png";
+import flyer2Mobile from "./assets/flyer2-mobile.png";
+import flyer3Mobile from "./assets/flyer3-mobile.png";
+import flyer4Mobile from "./assets/flyer4-mobile.png";
 
 import {
   Routes,
@@ -73,12 +76,20 @@ function App() {
   const [reviewLoading, setReviewLoading] = useState(false);
   const [openInfo, setOpenInfo] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
-  const flyers = [
-  flyer1,
-  flyer2,
-  flyer3,
-  flyer4,
-];
+  const isMobile = window.innerWidth < 768;
+const flyers = isMobile
+  ? [
+      flyer1Mobile,
+      flyer2Mobile,
+      flyer3Mobile,
+      flyer4Mobile,
+    ]
+  : [
+      flyer1,
+      flyer2,
+      flyer3,
+      flyer4,
+    ];
 
      useEffect(() => {
 
@@ -603,14 +614,7 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 <img
   src={flyer}
   alt=""
-  className="
-    w-full
-    h-[280px]
-    sm:h-[350px]
-    md:h-auto
-    object-cover
-    block
-  "
+  className="w-full h-auto block"
 />
 
           </div>
