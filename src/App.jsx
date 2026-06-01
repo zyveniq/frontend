@@ -1360,7 +1360,7 @@ mb-0
 
           {/* MAIN GRID */}
 
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-20 mt-20 items-start">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 md:gap-20 mt-16 md:mt-20 items-start">
 
             {/* LEFT LINKS */}
 
@@ -1532,7 +1532,15 @@ mb-0
 
             
 
-            <div className="space-y-6 w-full border-l border-black/10 pl-12">
+            <div
+  className="
+  space-y-5
+  w-full
+  md:border-l
+  md:border-black/10
+  md:pl-12
+  "
+>
 
               {[
                 {
@@ -1605,7 +1613,17 @@ mb-0
 
                 <div
                   key={index}
-                  className={`rounded-[40px] overflow-hidden border ${
+                  className={`
+mx-auto
+w-[92%]
+max-w-[430px]
+md:w-full
+md:max-w-none
+rounded-[28px]
+md:rounded-[40px]
+overflow-hidden
+border
+${
                     item.dark
                       ? "border-transparent"
                       : "border-gray-100"
@@ -1618,14 +1636,24 @@ mb-0
                         openInfo === index ? null : index
                       )
                     }
-                    className={`w-full text-left p-7 bg-gradient-to-br ${item.gradient}`}
+                    className={`
+w-full
+text-left
+p-5
+md:p-7
+bg-gradient-to-br
+${item.gradient}
+`}
                   >
 
                     <div className="flex justify-between items-center">
 
                       <div className="flex items-center gap-3">
 
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-3xl ${
+                        <div className={`
+w-10 h-10
+md:w-12 md:h-12
+rounded-xl flex items-center justify-center text-3xl ${
                           item.dark
                             ? "bg-white/10 text-white"
                             : "bg-white text-[#023047]"
@@ -1633,7 +1661,7 @@ mb-0
                           {item.icon}
                         </div>
 
-                        <h3 className={`text-xl md:text-2xl font-black ${
+                        <h3 className={`text-lg md:text-2xl font-black ${
                           item.dark
                             ? "text-white"
                             : "text-[#023047]"
