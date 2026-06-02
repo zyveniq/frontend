@@ -1500,7 +1500,6 @@ mb-0
                 >
                   Blogs
                 </Link>
-
                 </div>
 
               </div>
