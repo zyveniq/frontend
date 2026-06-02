@@ -388,7 +388,7 @@ const formattedReviews = response.data.map(
 
 <div className="
 absolute
-left-[45%]
+left-1/2
 -translate-x-1/2
 flex
 items-center
@@ -663,8 +663,8 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 <section className="
 relative
 min-h-[100vh]
-md:h-[100svh]
-overflow-hidden
+min-h-screen
+overflow-visible
 bg-[#F5F1EA]
 ">
 
@@ -694,7 +694,6 @@ bg-[#F5F1EA]
 className="
 relative
 z-10
-h-full
 min-h-[100vh]
 flex
 flex-col
