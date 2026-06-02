@@ -1534,7 +1534,7 @@ mb-0
 
             <div
   className="
-  space-y-5
+  space-y-7
   w-full
   md:border-l
   md:border-black/10
@@ -1614,12 +1614,12 @@ mb-0
                 <div
                   key={index}
                   className={`
+w-[84%]
 mx-auto
-w-[92%]
 max-w-[430px]
 md:w-full
 md:max-w-none
-rounded-[28px]
+rounded-[36px]
 md:rounded-[40px]
 overflow-hidden
 border
