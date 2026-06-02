@@ -129,8 +129,8 @@ right-3
   <div
     className="
     relative
-w-[120px]
-h-[120px]
+w-[70px]
+h-[70px]
 md:w-[100px]
 md:h-[100px]
     rounded-full
