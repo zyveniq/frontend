@@ -708,11 +708,9 @@ justify-between
 
       {/* COMING SOON */}
 
-      <p className="text-white/70 text-xs md:text-sm tracking-[0.45em] uppercase font-medium">
-
-        Coming Soon
-
-      </p>
+<p className="text-white text-sm md:text-base tracking-[0.45em] uppercase font-semibold">
+  Coming Soon
+</p>
 
       {/* HUGE HERO */}
 
@@ -760,38 +758,48 @@ md:max-w-[900px]
 
         {/* EMAIL */}
 
-<div
-id="waitlist"
-className="
-flex
-w-full
-lg:w-auto
-flex-col
-md:flex-row
-gap-4
-mt-auto
-"
->
+<div id="waitlist" className="w-full lg:w-auto">
 
-          <input
-            type="email"
-            placeholder=" Get updates in your inbox"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full md:w-[340px] h-[64px] rounded-full bg-white/10 border border-white/10 px-7 text-white placeholder:text-white/100 outline-none backdrop-blur-xl"
-          />
+  <div
+    className="
+    flex
+    flex-col
+    md:flex-row
+    gap-4
+    "
+  >
 
-          <button
-            onClick={handleSubscribe}
-            disabled={loading}
-            className="h-[64px] px-10 rounded-full bg-white text-black font-semibold tracking-[0.08em] hover:bg-[#EAE4DA] transition-all duration-500"
-          >
+    <input
+      type="email"
+      placeholder=" Get updates in your inbox"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      className="w-full md:w-[340px] h-[64px] rounded-full bg-white/10 border border-white/10 px-7 text-white placeholder:text-white/100 outline-none backdrop-blur-xl"
+    />
 
-            {loading
-              ? "PLEASE WAIT..."
-              : "⚡STAY UPDATED"}
+    <button
+      onClick={handleSubscribe}
+      disabled={loading}
+      className="h-[64px] px-10 rounded-full bg-white text-black font-semibold tracking-[0.08em]"
+    >
+      {loading ? "PLEASE WAIT..." : "⚡ STAY UPDATED"}
+    </button>
 
-          </button>
+  </div>
+
+  {message && (
+    <p className="
+      mt-4
+      text-center
+      text-white/80
+      text-sm
+      tracking-wide
+    ">
+      {message}
+    </p>
+  )}
+
+
 
         </div>
 

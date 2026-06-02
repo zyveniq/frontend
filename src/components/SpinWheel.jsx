@@ -20,6 +20,25 @@ export default function SpinWheel() {
   const [spinning, setSpinning] = useState(false);
   const [winningIndex, setWinningIndex] = useState(null);
   const [email, setEmail] = useState("");
+  const saveSpinResult = async (reward) => {
+  try {
+    await fetch(
+      "https://backend-7a2m.onrender.com/api/spin-wheel/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          reward,
+        }),
+      }
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};
 
   // Direct 3-Second Auto Popup on every single page load
   useEffect(() => {
@@ -80,14 +99,87 @@ export default function SpinWheel() {
 
   return (
     <>
-      {/* Floating Button */}
-      <button
-        onClick={() => setShowFormModal(true)}
-        className="fixed bottom-8 right-8 z-[9999] bg-red-600 hover:bg-red-700 text-white px-0.5 py-0.5 rounded-full font-bold shadow-xl animate-pulse"
-      >
-        ⚡ Spin & Win
-      </button>
+<div
+  onClick={() => setShowFormModal(true)}
+  className="
+  fixed
+bottom-20
+right-3
+  md:bottom-8
+  md:right-8
+  z-[9999]
+  cursor-pointer
+  group
+  "
+>
 
+  {/* Glow */}
+
+  <div className="
+    absolute
+    inset-0
+    bg-[#FFB703]/30
+    blur-2xl
+    rounded-full
+    scale-110
+  " />
+
+  {/* Wheel */}
+
+  <div
+    className="
+    relative
+w-[120px]
+h-[120px]
+md:w-[100px]
+md:h-[100px]
+    rounded-full
+border-[6px]
+border-[#D4A017]
+    shadow-[0_0_50px_rgba(212,160,23,0.45)]
+    animate-[spin_10s_linear_infinite]
+    animate-[float_3s_ease-in-out_infinite]
+    overflow-hidden
+    group-hover:scale-110
+    transition-all
+    duration-500
+    "
+    style={{
+      background:
+        "conic-gradient(#023047 0deg 60deg,#FFB703 60deg 120deg,#023047 120deg 180deg,#FFB703 180deg 240deg,#023047 240deg 300deg,#FFB703 300deg 360deg)",
+    }}
+  >
+
+    <div className="
+      absolute
+      inset-0
+      flex
+      items-center
+      justify-center
+    ">
+
+    </div>
+
+  </div>
+
+<div className="
+absolute
+-bottom-2
+left-1/2
+-translate-x-1/2
+bg-[#FFB703]
+text-[#023047]
+text-[10px]
+font-black
+px-3
+py-1
+rounded-full
+shadow-lg
+">
+WIN
+</div>
+
+</div>
       {/* Email Popup */}
       {showFormModal && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[99999]">
@@ -159,13 +251,19 @@ export default function SpinWheel() {
                   background:
                     "conic-gradient(#0B2341 0deg 60deg, #D4AF37 60deg 120deg, #0B2341 120deg 180deg, #D4AF37 180deg 240deg, #0B2341 240deg 300deg, #D4AF37 300deg 360deg)",
                 }}
-                onTransitionEnd={() => {
-                  if (winningIndex !== null) {
-                    setResult(rewards[winningIndex]);
-                    setShowRewardModal(true);
-                  }
-                  setSpinning(false);
-                }}
+onTransitionEnd={async () => {
+  if (winningIndex !== null) {
+    const reward = rewards[winningIndex];
+
+    setResult(reward);
+
+    await saveSpinResult(reward);
+
+    setShowRewardModal(true);
+  }
+
+  setSpinning(false);
+}}
               >
                 {/* Reward Labels */}
                 {rewards.map((reward, index) => {
