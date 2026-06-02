@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-
+import SpinWheel from "./components/SpinWheel";
+import { useRef } from "react";
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -79,6 +80,18 @@ function App() {
   flyer3,
   flyer4,
 ];
+  const horizontalScrollRef = useRef(null);
+
+  const scrollGallery = (direction) => {
+    if (horizontalScrollRef.current) {
+      const { scrollLeft } = horizontalScrollRef.current;
+      const scrollAmount = direction === "left" ? -348 : 348;
+      horizontalScrollRef.current.scrollTo({
+        left: scrollLeft + scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
      useEffect(() => {
 
@@ -333,7 +346,7 @@ const formattedReviews = response.data.map(
 
       {/* ================= NAVBAR ================= */}
 
-      <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] border-b border-gray-100">
 
         <div className="w-full px-3 md:px-6 xl:px-8 py-3 md:py-5 flex items-center justify-between relative">
 
@@ -362,20 +375,21 @@ const formattedReviews = response.data.map(
 
 <div className="
 absolute
-left-[45%]
+left-1/2
 -translate-x-1/2
 flex
 items-center
 justify-center
 z-10
 ">
+  <div className="absolute w-40 h-40 bg-[#FFB703]/10 blur-3xl rounded-full"></div>
 
             {/* LOGO */}
 
             <img
             src={logo}
             alt="Zyveniq Logo"
-            className="h-10 md:h-16 w-auto object-contain -mr-7 md:-mr-9"
+            className="h-12 md:h-20 w-auto object-contain -mr-7 md:-mr-9"
             />
 
             {/* BRAND TEXT */}
@@ -620,25 +634,16 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 
       
 {/* ================= HERO ================= */}
-
-<section className="bg-[#023047] overflow-hidden py-3 border-y border-[#D4A017]/20">
-  <div className="animate-marquee whitespace-nowrap flex">
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-
+<section className="bg-[#023047] overflow-hidden py-1.5 border-y border-[#D4A017]/20 flex w-full">
+  <div className="animate-marquee whitespace-nowrap flex shrink-0 min-w-full justify-around">
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+  </div>
+  <div aria-hidden="true" className="animate-marquee whitespace-nowrap flex shrink-0 min-w-full justify-around">
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
   </div>
 </section>
 
@@ -649,6 +654,7 @@ md:h-[100svh]
 overflow-hidden
 bg-[#F5F1EA]
 ">
+
 
   {/* VIDEO BACKGROUND */}
 
@@ -704,7 +710,7 @@ mt-5
 text-[#F8F5F0]
 text-[72px]
 sm:text-[80px]
-md:text-[180px]
+md:text-[220px]
 leading-[0.95]
 md:leading-[0.82]
 tracking-[-0.06em]
@@ -734,7 +740,7 @@ md:max-w-[900px]
 
           <p className="text-[#F8F5F0] text-lg md:text-2xl font-medium">
 
-            Be part of the first release.
+            Join the inner circle. Wear the moment first.
 
           </p>
 
@@ -757,7 +763,7 @@ mt-auto
 
           <input
             type="email"
-            placeholder="Your email"
+            placeholder=" Get updates in your inbox"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full md:w-[340px] h-[64px] rounded-full bg-white/10 border border-white/10 px-7 text-white placeholder:text-white/100 outline-none backdrop-blur-xl"
@@ -771,7 +777,7 @@ mt-auto
 
             {loading
               ? "PLEASE WAIT..."
-              : "REQUEST ACCESS"}
+              : "⚡STAY UPDATED"}
 
           </button>
 
@@ -785,6 +791,7 @@ mt-auto
 
 </section>
 
+<SpinWheel />
 
 
       {/* ================= TESTIMONIALS ================= */}
@@ -1036,7 +1043,7 @@ transition={{
   duration: 0.35,
 }}
                 className="relative rounded-[35px] overflow-hidden group cursor-pointer
-                shadow-[12px_14px_35px_rgba(0,0,0,0.679)]
+                hover:shadow-[0_40px_100px_rgba(0,0,0,0.25)]
                 hover:shadow-[18px_20px_60px_rgba(0,0,0,0.35)]
                 transition-all duration-300"
               >
@@ -1148,13 +1155,37 @@ mb-0
           </div>
           {/* LUXURY HORIZONTAL GALLERY */}
 
-          <div className="relative mt-16">
+          <div className="relative group/wrapper mt-16 w-full">
+
+            {/* Left Arrow Button */}
+            <button
+              onClick={() => scrollGallery("left")}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-white/80 backdrop-blur-md text-gray-800 p-3 rounded-full shadow-lg border border-gray-200/50 hover:bg-white transition active:scale-95 md:opacity-0 md:group-hover/wrapper:opacity-100 duration-300"
+              aria-label="Scroll Left"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            {/* Right Arrow Button */}
+            <button
+              onClick={() => scrollGallery("right")}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-white/80 backdrop-blur-md text-gray-800 p-3 rounded-full shadow-lg border border-gray-200/50 hover:bg-white transition active:scale-95 md:opacity-0 md:group-hover/wrapper:opacity-100 duration-300"
+              aria-label="Scroll Right"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
 
             {/* SCROLL WRAPPER */}
 
-            <div className="overflow-x-auto scrollbar-hide pb-6">
-
-              <div className="flex gap-7 w-max px-1">
+            <div 
+              ref={horizontalScrollRef}
+              className="overflow-x-auto scrollbar-hide pb-6 scroll-smooth"
+            >
+              <div className="flex gap-7 w-max px-4">
 
                 {[
                   ethnic1,
@@ -1237,7 +1268,7 @@ mb-0
 
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10 mt-16 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 items-stretch">
             
           <div className="bg-white/5 border border-white/10 rounded-[35px] p-10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3">
             <p className="text-[#8ECAE6] text-sm tracking-[0.3em] uppercase font-semibold">
@@ -1258,7 +1289,7 @@ mb-0
               </p>
 
             </div>
-            <div className="relative bg-gradient-to-br from-[#0B2942] to-[#102F4A] border border-[#1D4E74] rounded-[40px] p-12 backdrop-blur-xl scale-[1.04] shadow-[0_25px_100px_rgba(0,0,0,0.35)] overflow-hidden transition-all duration-500 hover:-translate-y-3">
+            <div className="relative bg-gradient-to-br from-[#0B2942] to-[#102F4A] border border-[#1D4E74] rounded-[40px] p-12 backdrop-blur-xl md:scale-[1.04] shadow-[0_25px_100px_rgba(0,0,0,0.35)] overflow-hidden transition-all duration-500 hover:-translate-y-3">
             <div className="absolute -top-24 -right-24 w-56 h-56 bg-[#FFB703]/20 blur-3xl rounded-full"></div>
             <p className="text-[#8ECAE6] text-sm tracking-[0.3em] uppercase font-semibold">
               Intelligence
@@ -1831,6 +1862,7 @@ mb-0
 <div className="pt-8 border-t border-white/10">
 
   <div className="text-center text-gray-400 text-sm md:text-base">
+    <div className="h-px bg-gradient-to-r from-transparent via-[#FFB703]/40 to-transparent mb-10"></div>
     © Zyveniq Pvt. Ltd. 2026. All Rights Reserved
   </div>
 
