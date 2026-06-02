@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import SpinWheel from "./components/SpinWheel";
+import { useRef } from "react";
 
 import {
   FaInstagram,
@@ -63,6 +65,8 @@ function App() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const horizontalScrollRef = useRef(null);
+  
 
   const [pincode, setPincode] = useState("");
   const [availabilityMessage, setAvailabilityMessage] = useState("");
@@ -90,6 +94,18 @@ const flyers = isMobile
       flyer3,
       flyer4,
     ];
+
+
+  const scrollGallery = (direction) => {
+    if (horizontalScrollRef.current) {
+      const { scrollLeft } = horizontalScrollRef.current;
+      const scrollAmount = direction === "left" ? -348 : 348;
+      horizontalScrollRef.current.scrollTo({
+        left: scrollLeft + scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
      useEffect(() => {
 
@@ -344,8 +360,7 @@ const formattedReviews = response.data.map(
 
       {/* ================= NAVBAR ================= */}
 
-      <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
-
+<nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] border-b border-gray-100">
         <div className="w-full px-3 md:px-6 xl:px-8 py-3 md:py-5 flex items-center justify-between relative">
 
           {/* LEFT SIDE */}
@@ -380,6 +395,7 @@ items-center
 justify-center
 z-10
 ">
+    <div className="absolute w-40 h-40 bg-[#FFB703]/10 blur-3xl rounded-full"></div>
 
             {/* LOGO */}
 
@@ -631,24 +647,16 @@ shadow-[0_20px_80px_rgba(0,0,0,0.12)]
 
       
 {/* ================= HERO ================= */}
-<section className="bg-[#023047] overflow-hidden py-3 border-y border-[#D4A017]/20">
-  <div className="animate-marquee whitespace-nowrap flex">
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-    <span className="text-[#FFD54F] text-sm md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">
-      • ZYVENIQ • LAUNCHING SOON •
-    </span>
-
+<section className="bg-[#023047] overflow-hidden py-1.5 border-y border-[#D4A017]/20 flex w-full">
+  <div className="animate-marquee whitespace-nowrap flex shrink-0 min-w-full justify-around">
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+  </div>
+  <div aria-hidden="true" className="animate-marquee whitespace-nowrap flex shrink-0 min-w-full justify-around">
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
+    <span className="text-[#FFD54F] text-xs md:text-lg font-semibold tracking-[0.4em] uppercase pr-20">• ZYVENIQ • LAUNCHING SOON •</span>
   </div>
 </section>
 
@@ -744,7 +752,7 @@ md:max-w-[900px]
 
           <p className="text-[#F8F5F0] text-lg md:text-2xl font-medium">
 
-            Be part of the first release.
+            Join the inner circle. Wear the moment first.
 
           </p>
 
@@ -767,7 +775,7 @@ mt-auto
 
           <input
             type="email"
-            placeholder="Your email"
+            placeholder=" Get updates in your inbox"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full md:w-[340px] h-[64px] rounded-full bg-white/10 border border-white/10 px-7 text-white placeholder:text-white/100 outline-none backdrop-blur-xl"
@@ -781,7 +789,7 @@ mt-auto
 
             {loading
               ? "PLEASE WAIT..."
-              : "REQUEST ACCESS"}
+              : "⚡STAY UPDATED"}
 
           </button>
 
@@ -796,7 +804,7 @@ mt-auto
 </section>
 
 
-
+<SpinWheel />
       {/* ================= TESTIMONIALS ================= */}
       <FadeUp>
       {/* ================= TESTIMONIALS ================= */}
@@ -1158,13 +1166,37 @@ mb-0
           </div>
           {/* LUXURY HORIZONTAL GALLERY */}
 
-          <div className="relative mt-16">
+          <div className="relative group/wrapper mt-16 w-full">
+                      {/* Left Arrow Button */}
+            <button
+              onClick={() => scrollGallery("left")}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-white/80 backdrop-blur-md text-gray-800 p-3 rounded-full shadow-lg border border-gray-200/50 hover:bg-white transition active:scale-95 md:opacity-0 md:group-hover/wrapper:opacity-100 duration-300"
+              aria-label="Scroll Left"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            {/* Right Arrow Button */}
+            <button
+              onClick={() => scrollGallery("right")}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-white/80 backdrop-blur-md text-gray-800 p-3 rounded-full shadow-lg border border-gray-200/50 hover:bg-white transition active:scale-95 md:opacity-0 md:group-hover/wrapper:opacity-100 duration-300"
+              aria-label="Scroll Right"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
 
             {/* SCROLL WRAPPER */}
 
-            <div className="overflow-x-auto scrollbar-hide pb-6">
+            <div
+ ref={horizontalScrollRef}
+ className="overflow-x-auto scrollbar-hide pb-6 scroll-smooth"
+>
 
-              <div className="flex gap-7 w-max px-1">
+              <div className="flex gap-7 w-max px-4">
 
                 {[
                   ethnic1,
